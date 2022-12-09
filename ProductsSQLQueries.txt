@@ -1,0 +1,75 @@
+CREATE TABLE IF NOT EXISTS public."CHANNEL"
+(
+    channel_id character varying COLLATE pg_catalog."default"
+)
+
+CREATE TABLE IF NOT EXISTS public."PRODUCT2"
+(
+    product_reference_id character varying COLLATE pg_catalog."default" NOT NULL,
+    sku character varying COLLATE pg_catalog."default",
+    title character varying COLLATE pg_catalog."default",
+    mrp double precision,
+    brand character varying COLLATE pg_catalog."default",
+    material character varying COLLATE pg_catalog."default",
+    image_url1 character varying COLLATE pg_catalog."default",
+    image_url2 character varying COLLATE pg_catalog."default",
+    image_url3 character varying COLLATE pg_catalog."default",
+    image_url4 character varying COLLATE pg_catalog."default",
+    image_url5 character varying COLLATE pg_catalog."default",
+    colour character varying COLLATE pg_catalog."default",
+    description character varying COLLATE pg_catalog."default",
+    CONSTRAINT "PRODUCT2_pkey" PRIMARY KEY (product_reference_id)
+)
+CREATE TABLE IF NOT EXISTS public."SALES_ORDER"
+(
+    channel_id integer,
+    channel_order_id character varying COLLATE pg_catalog."default",
+    status character varying COLLATE pg_catalog."default",
+    user_id character varying COLLATE pg_catalog."default",
+    sold_price character varying COLLATE pg_catalog."default",
+    remarks character varying COLLATE pg_catalog."default",
+    customer_id character varying COLLATE pg_catalog."default",
+    buyer_name character varying COLLATE pg_catalog."default",
+    buyer_phone_number character varying COLLATE pg_catalog."default",
+    recipient_name character varying COLLATE pg_catalog."default",
+    shipping_address1 character varying COLLATE pg_catalog."default",
+    shipping_address2 character varying COLLATE pg_catalog."default",
+    shipping_address3 character varying COLLATE pg_catalog."default",
+    ship_city character varying COLLATE pg_catalog."default",
+    ship_state character varying COLLATE pg_catalog."default",
+    ship_postal_code character varying COLLATE pg_catalog."default",
+    ship_country character varying COLLATE pg_catalog."default",
+    ship_phone_number character varying COLLATE pg_catalog."default",
+    payment_method character varying COLLATE pg_catalog."default",
+    cod_collectible_amount character varying COLLATE pg_catalog."default",
+    fulfilled_by character varying COLLATE pg_catalog."default",
+    invoice_number character varying COLLATE pg_catalog."default",
+    category character varying COLLATE pg_catalog."default",
+    warehouse_id character varying COLLATE pg_catalog."default",
+    ship_date character varying COLLATE pg_catalog."default"
+)
+
+CREATE TABLE IF NOT EXISTS public."SALES_ORDER_ITEM"
+(
+    sku character varying COLLATE pg_catalog."default",
+    quantity double precision,
+    sales_order_id character varying COLLATE pg_catalog."default",
+    channel_sku character varying COLLATE pg_catalog."default",
+    order_item_status character varying COLLATE pg_catalog."default",
+    sold_price character varying COLLATE pg_catalog."default",
+    tax_rate character varying COLLATE pg_catalog."default",
+    tax_type character varying COLLATE pg_catalog."default",
+    tax_amount character varying COLLATE pg_catalog."default",
+    item_price character varying COLLATE pg_catalog."default",
+    item_tax character varying COLLATE pg_catalog."default",
+    shipping_price character varying COLLATE pg_catalog."default",
+    shipping_tax character varying COLLATE pg_catalog."default",
+    item_name character varying COLLATE pg_catalog."default"
+)
+
+CREATE TABLE IF NOT EXISTS public."STOCK"
+(
+    quantity integer,
+    sku character varying COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT "STOCK_pkey" PRIMARY KEY (sku)
+)
