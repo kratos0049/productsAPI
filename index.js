@@ -9,8 +9,8 @@ const client = new Client('postgres://products_bme6_user:0NT8MGF8HGyjGt8FnlojtJg
   host                 : 'singapore-postgres.render.com',            // Postgres ip address[s] or domain name[s]
   port                 : 5432,          // Postgres server port[s]
   database             : 'products_bme6',            // Name of database to connect to
-  username             : 'products_bme6_user',            // Username of database user
-  password             : '0NT8MGF8HGyjGt8FnlojtJgSxHxuLM7a',            // Password of database user
+  username             : 'u',            // Username of database user
+  password             : 'p',            // Password of database user
   
 })
 client.connect((err) => {
